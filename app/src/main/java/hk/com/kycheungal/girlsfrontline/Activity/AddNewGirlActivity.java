@@ -1,7 +1,9 @@
-package hk.com.kycheungal.girlsfrontline;
+package hk.com.kycheungal.girlsfrontline.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import hk.com.kycheungal.girlsfrontline.R;
 
 public class AddNewGirlActivity extends AppCompatActivity {
 

@@ -5,13 +5,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="hk.com.kycheungal.girlsfrontline.MainActivity">
+    tools:context="hk.com.kycheungal.girlsfrontline.Activity.MainActivity">
 
 
     <Button
         android:id="@+id/btn_add"
-        android:text="Add new girls"
+        android:text="Add new girlsItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rec_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
