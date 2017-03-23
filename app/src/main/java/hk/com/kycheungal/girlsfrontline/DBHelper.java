@@ -15,8 +15,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String Table_Name = "Girls_table";
     public static final String Col_1 = "ID";
     public static final String Col_2 = "Lv";
-    public static final String Col_3 = "No of people";
-    public static final String Col_4 = "Skill Lv";
+    public static final String Col_3 = "No_Of_People";
+    public static final String Col_4 = "Skill_Lv";
 
 
 
@@ -24,9 +24,11 @@ public class DBHelper extends SQLiteOpenHelper {
         super(context, DB_NAME, null, 1);
     }
 
+
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table " + Table_Name + "(ID INTEGER PRIMARY KEY AUTO, Lv INTEGER, NO_OF_PEOPLE INTEGER, SKILL_LV INTEGER)");
+        sqLiteDatabase.execSQL("create table " + Table_Name + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, Lv INTEGER, No_Of_People INTEGER, Skill_Lv INTEGER)");
     }
 
     @Override

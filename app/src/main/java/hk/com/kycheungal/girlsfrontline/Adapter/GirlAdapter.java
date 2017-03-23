@@ -23,6 +23,17 @@ public class GirlAdapter extends RecyclerView.Adapter<GirlAdapter.DerpHolder>{
     private List<GirlListItem> listData;
     private LayoutInflater inflater;
 
+    private ItemClickCallBack itemClickCallBack;
+
+    public interface ItemClickCallBack {
+        void onItemClick(int position);
+
+    }
+
+    public void setItemClickCallBack(ItemClickCallBack itemClickCallBack) {
+        this.itemClickCallBack = itemClickCallBack;
+    }
+
     public GirlAdapter(List<GirlListItem> listData, Context c){
         inflater = LayoutInflater.from(c);
         this.listData = listData;
@@ -48,7 +59,7 @@ public class GirlAdapter extends RecyclerView.Adapter<GirlAdapter.DerpHolder>{
         return listData.size();
     }
 
-    class DerpHolder extends RecyclerView.ViewHolder {
+    class DerpHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView name, lv, skillLv;
         private ImageView icon;
         private View container;
@@ -59,8 +70,13 @@ public class GirlAdapter extends RecyclerView.Adapter<GirlAdapter.DerpHolder>{
             skillLv = (TextView) itemView.findViewById(R.id.txv_skillLv);
             name = (TextView) itemView.findViewById(R.id.txv_name);
             icon = (ImageView) itemView.findViewById(R.id.imv_icon);
-            //We'll need the container later on, when we add an View.OnClickListener
             container = itemView.findViewById(R.id.cont_item_root);
+            container.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            itemClickCallBack.onItemClick(getAdapterPosition());
         }
     }
 }

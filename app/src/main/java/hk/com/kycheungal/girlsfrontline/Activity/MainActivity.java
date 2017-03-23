@@ -13,7 +13,7 @@ import hk.com.kycheungal.girlsfrontline.DBHelper;
 import hk.com.kycheungal.girlsfrontline.R;
 import hk.com.kycheungal.girlsfrontline.module.GirlData;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, GirlAdapter.ItemClickCallBack{
 
     DBHelper myDB;
     Button btn_add;
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         adapter = new GirlAdapter(GirlData.getListData(), this);
         recView.setAdapter(adapter);
+        
+        adapter.setItemClickCallBack(this);
 
     }
 
@@ -46,8 +48,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_add:
-                Intent addIntent = new Intent(this, AddNewGirlActivity.class);
-                startActivity(addIntent);
+                Intent intent_add = new Intent(this, AddNewGirlActivity.class);
+                startActivity(intent_add);
         }
     }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent_modify = new Intent(this, AddNewGirlActivity.class);
+        startActivity(intent_modify);
+    }
+
+
 }

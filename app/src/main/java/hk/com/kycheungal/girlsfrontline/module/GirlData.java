@@ -8,6 +8,7 @@ import java.util.List;
  */
 
 public class GirlData {
+
     private static final String[] names = {"G41", "M14",
             "Tar-21"} ;
     private static final int[] icons = {android.R.drawable.ic_popup_reminder, android.R.drawable.ic_menu_add,

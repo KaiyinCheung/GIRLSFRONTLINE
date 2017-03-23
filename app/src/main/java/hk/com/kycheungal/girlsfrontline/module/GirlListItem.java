@@ -5,11 +5,9 @@ package hk.com.kycheungal.girlsfrontline.module;
  */
 
 public class GirlListItem {
+
     private String Name;
     private int iconID, lv, skillLv;
-
-
-
 
     public void setLv(int lv) {
         this.lv = lv;
