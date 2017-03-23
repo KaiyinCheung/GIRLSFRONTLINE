@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by fujitsu on 19/3/2017.
  */
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "GirlsFrontLine.db";
     public static final String Table_Name = "Girls_table";
@@ -20,13 +20,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-    public DatabaseHelper(Context context) {
+    public DBHelper(Context context) {
         super(context, DB_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table " + Table_Name + "(ID INTEGER PRIMARY KEY, Lv INTEGER, NO_OF_PEOPLE INTEGER, SKILL_LV INTEGER)");
+        sqLiteDatabase.execSQL("create table " + Table_Name + "(ID INTEGER PRIMARY KEY AUTO, Lv INTEGER, NO_OF_PEOPLE INTEGER, SKILL_LV INTEGER)");
     }
 
     @Override

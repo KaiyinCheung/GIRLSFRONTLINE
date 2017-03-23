@@ -9,13 +9,13 @@ import android.view.View;
 import android.widget.Button;
 
 import hk.com.kycheungal.girlsfrontline.Adapter.GirlAdapter;
-import hk.com.kycheungal.girlsfrontline.DatabaseHelper;
+import hk.com.kycheungal.girlsfrontline.DBHelper;
 import hk.com.kycheungal.girlsfrontline.R;
 import hk.com.kycheungal.girlsfrontline.module.GirlData;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    DatabaseHelper myDB;
+    DBHelper myDB;
     Button btn_add;
 
     private RecyclerView recView;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myDB = new DatabaseHelper(this);
+        myDB = new DBHelper(this);
 
         btn_add = (Button) findViewById(R.id.btn_add);
         btn_add.setOnClickListener(this);
